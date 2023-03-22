@@ -9,8 +9,8 @@
 import Foundation
 
 enum Keys: String {
-    case consumerKey = "dpSwNe7QaUH7jahYHgVlsMnpp"
-    case consumerSecret = "ZPiA8wwXWsmzY40tqbvZ6BpVTjFmDtZeg2Zde6uQhSqeUo3xUD"
+    case consumerKey = ""
+    case consumerSecret = ""
 }
 
 enum AuthURLs: String {
