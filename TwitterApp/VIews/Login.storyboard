@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mGg-AO-H97">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="unR-zT-YV4">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="mGg-AO-H97" customClass="LoginViewController" customModule="TwitterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oQp-aW-tHU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-SE-hS4">
+                                <rect key="frame" x="119.5" y="317" width="136" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Login with Twitter">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginTapped:" destination="mGg-AO-H97" eventType="touchUpInside" id="R9M-jg-Rhk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="a1I-SE-hS4" firstAttribute="centerY" secondItem="oQp-aW-tHU" secondAttribute="centerY" id="fcU-6o-Fhn"/>
+                            <constraint firstItem="a1I-SE-hS4" firstAttribute="centerX" secondItem="oQp-aW-tHU" secondAttribute="centerX" id="rTN-OO-0yQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M2c-of-543"/>
+                    </view>
+                    <connections>
+                        <segue destination="MeN-gf-oeI" kind="show" identifier="showFeedSegue" id="Bn7-I1-hZA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3pk-fw-EPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86" y="173"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="lcs-9W-1jm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="MeN-gf-oeI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J6y-4K-3IV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="572" y="172"/>
+        </scene>
+    </scenes>
+</document>

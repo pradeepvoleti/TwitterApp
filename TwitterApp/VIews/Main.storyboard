@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="km4-hz-1Zn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="bav-Fe-gVK">
+            <objects>
+                <navigationController id="km4-hz-1Zn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Sn-kq-j1z">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vsE-Mj-MoO" kind="relationship" relationship="rootViewController" id="dOL-3f-whG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YWh-Ja-ILP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222" y="173"/>
+        </scene>
+        <!--Feed View Controller-->
+        <scene sceneID="5Cr-qn-NCR">
+            <objects>
+                <viewController id="vsE-Mj-MoO" customClass="FeedViewController" customModule="TwitterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="syN-oF-EFY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Roi-IK-UWT">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="200" id="GaV-2t-OfM" customClass="TweetCell" customModule="TwitterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GaV-2t-OfM" id="8Tv-ZC-VQa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lH2-3r-XVe" customClass="TweetView" customModule="TwitterApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="lH2-3r-XVe" secondAttribute="trailing" id="DbL-dW-5Et"/>
+                                                <constraint firstItem="lH2-3r-XVe" firstAttribute="top" secondItem="8Tv-ZC-VQa" secondAttribute="top" id="ECs-vl-lH7"/>
+                                                <constraint firstAttribute="bottom" secondItem="lH2-3r-XVe" secondAttribute="bottom" id="jPC-mD-q9A"/>
+                                                <constraint firstItem="lH2-3r-XVe" firstAttribute="leading" secondItem="8Tv-ZC-VQa" secondAttribute="leading" id="v9A-xN-lkL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tweetView" destination="lH2-3r-XVe" id="oCB-cG-M5y"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vsE-Mj-MoO" id="n4I-br-gpz"/>
+                                    <outlet property="delegate" destination="vsE-Mj-MoO" id="7wH-7O-UTb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SSf-lN-4v1" firstAttribute="trailing" secondItem="Roi-IK-UWT" secondAttribute="trailing" id="7KF-ZB-4Be"/>
+                            <constraint firstItem="SSf-lN-4v1" firstAttribute="bottom" secondItem="Roi-IK-UWT" secondAttribute="bottom" id="7r3-Qg-1uy"/>
+                            <constraint firstItem="Roi-IK-UWT" firstAttribute="leading" secondItem="SSf-lN-4v1" secondAttribute="leading" id="9W1-5C-kjt"/>
+                            <constraint firstItem="Roi-IK-UWT" firstAttribute="top" secondItem="SSf-lN-4v1" secondAttribute="top" id="iaN-bo-8C6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SSf-lN-4v1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HOC-O0-LlJ"/>
+                    <connections>
+                        <outlet property="feedTable" destination="Roi-IK-UWT" id="I6M-ad-cug"/>
+                        <segue destination="rUR-BN-88p" kind="show" identifier="showTweetSegue" id="oEc-0o-YzZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZz-nH-bWI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="590" y="171"/>
+        </scene>
+        <!--Tweet View Controller-->
+        <scene sceneID="T4R-x0-QAB">
+            <objects>
+                <viewController id="rUR-BN-88p" customClass="TweetViewController" customModule="TwitterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cxg-Dk-kwf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPi-y9-2ma" customClass="TweetView" customModule="TwitterApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hf6-sc-trW" firstAttribute="bottom" secondItem="MPi-y9-2ma" secondAttribute="bottom" placeholder="YES" id="JtJ-hs-ShM"/>
+                            <constraint firstItem="MPi-y9-2ma" firstAttribute="leading" secondItem="Hf6-sc-trW" secondAttribute="leading" id="QLN-Fp-aBx"/>
+                            <constraint firstItem="MPi-y9-2ma" firstAttribute="top" secondItem="Hf6-sc-trW" secondAttribute="top" id="hoL-5Y-wkm"/>
+                            <constraint firstItem="Hf6-sc-trW" firstAttribute="trailing" secondItem="MPi-y9-2ma" secondAttribute="trailing" id="mlE-X8-GZP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hf6-sc-trW"/>
+                    </view>
+                    <connections>
+                        <outlet property="tweetView" destination="MPi-y9-2ma" id="IRH-RS-WNJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjA-Qs-uEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1439" y="172"/>
+        </scene>
+    </scenes>
+</document>
